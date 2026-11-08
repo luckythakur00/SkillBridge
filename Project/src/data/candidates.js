@@ -1,0 +1,220 @@
+import { daysAgo } from './dates';
+
+const t = (name, level, verified = false) => ({ name, type: 'TECHNICAL', level, verified });
+const s = (name, level, verified = false) => ({ name, type: 'SOFT', level, verified });
+
+const blankSections = {
+  education: [],
+  experience: [],
+  projects: [],
+  certifications: [],
+  achievements: [],
+  resume: null,
+};
+
+const resume = (fileName, fileSize, days) => ({ fileName, fileSize, uploadedAt: daysAgo(days) });
+
+const AARAV = {
+  ...blankSections,
+  id: 'cnd_aarav',
+  userId: 'usr_aarav',
+  category: 'STUDENT',
+  fullName: 'Aarav Sharma',
+  headline: 'Final-year Computer Science student at IIT Delhi | ML enthusiast',
+  email: 'aarav.sharma@iitd.ac.in',
+  phone: '+91 98765 43210',
+  location: 'New Delhi, India',
+  university: 'Indian Institute of Technology, Delhi',
+  degree: 'B.Tech in Computer Science & Engineering',
+  graduationYear: 2027,
+  cgpa: '8.92',
+  github: 'https://github.com/example/aarav-sharma',
+  linkedin: 'https://www.linkedin.com/in/example-aarav-sharma',
+  bio: 'Passionate undergraduate with hands-on experience in distributed systems, machine learning models, and building high-performance web applications. Seeking opportunities to apply academic rigor to industry-scale problems.',
+  skills: [
+    t('React.js', 'ADVANCED'), t('Node.js', 'INTERMEDIATE'), t('Python', 'ADVANCED', true), t('TensorFlow', 'INTERMEDIATE'),
+    t('PostgreSQL', 'INTERMEDIATE'), t('Docker', 'BEGINNER'), t('Git', 'ADVANCED'), t('REST APIs', 'ADVANCED'),
+    t('Tailwind CSS', 'INTERMEDIATE'), t('Machine Learning', 'INTERMEDIATE'), s('Communication', 'ADVANCED', true), s('Problem Solving', 'ADVANCED'),
+  ],
+  education: [
+    { id: 'edu_1', institution: 'Indian Institute of Technology, Delhi', degree: 'B.Tech in Computer Science & Engineering', period: '2023 – 2027', score: 'CGPA: 8.92' },
+    { id: 'edu_2', institution: 'Delhi Public School, R.K. Puram', degree: 'Higher Secondary (CBSE – XII)', period: '2021 – 2023', score: '96.4%' },
+  ],
+  experience: [
+    { id: 'exp_1', title: 'Software Engineering Intern', company: 'Bluepeak Software', period: 'May – Jul 2026', type: 'Internship', description: 'Built an internal reporting dashboard in React and reduced manual reporting time for the support team.' },
+  ],
+  projects: [
+    { id: 'prj_1', title: 'MedVision: Automated Chest X-Ray Diagnosis', description: 'Trained a ResNet-50 deep learning model on 100k+ radiograph images, achieving a 93.4% AUROC for pneumonia classification.', tags: ['Python', 'PyTorch', 'Flask', 'OpenCV'], link: 'https://github.com/example/medvision' },
+    { id: 'prj_2', title: 'CampusFlow: Peer Mentorship Portal', description: 'Architected a real-time collaborative workspace for senior-junior university mentorship with WebSockets and Redis.', tags: ['React', 'Express', 'Socket.io', 'MongoDB'], link: 'https://github.com/example/campusflow' },
+  ],
+  certifications: [
+    { id: 'crt_1', name: 'AWS Certified Cloud Practitioner', issuer: 'Amazon Web Services', date: 'Aug 2025', credentialUrl: '' },
+    { id: 'crt_2', name: 'Deep Learning Specialization', issuer: 'DeepLearning.AI / Coursera', date: 'Jan 2025', credentialUrl: '' },
+  ],
+  achievements: [
+    { id: 'ach_1', text: 'Finalist at Smart India Hackathon 2024 (top 5 of 1,200 teams)' },
+    { id: 'ach_2', text: 'Published research poster at IEEE International Student Symposium on Distributed AI' },
+    { id: 'ach_3', text: 'Department Academic Excellence Merit Scholar (Semesters 3 & 4)' },
+  ],
+  resume: resume('Aarav_Sharma_Resume.pdf', 1468006, 25),
+  createdAt: daysAgo(120),
+};
+
+const MEERA = {
+  ...blankSections,
+  id: 'cnd_meera',
+  userId: 'usr_meera',
+  category: 'ACADEMICIAN',
+  fullName: 'Dr. Meera Iyer',
+  headline: 'Associate Professor, Computer Science | Applied NLP researcher',
+  email: 'meera.iyer@deccantech.example',
+  phone: '+91 98450 11223',
+  location: 'Hyderabad, India',
+  university: 'Deccan Technical University',
+  degree: 'Ph.D. in Computer Science',
+  graduationYear: 2014,
+  cgpa: '',
+  department: 'Computer Science & Engineering',
+  designation: 'Associate Professor',
+  github: '',
+  linkedin: 'https://www.linkedin.com/in/example-meera-iyer',
+  bio: 'Faculty member with eleven years of teaching and research experience in NLP. Interested in faculty internships, consultancy and funded research with industry partners.',
+  skills: [
+    t('Research Methods', 'EXPERT', true), t('Curriculum Design', 'ADVANCED'), t('Technical Writing', 'ADVANCED'), t('Python', 'ADVANCED'),
+    t('NLP', 'EXPERT'), t('Machine Learning', 'ADVANCED'), t('Grant Writing', 'BEGINNER'), s('Mentoring', 'EXPERT'), s('Presentation Skills', 'ADVANCED'), s('Communication', 'ADVANCED'),
+  ],
+  education: [
+    { id: 'edu_1', institution: 'Indian Institute of Science, Bengaluru', degree: 'Ph.D. in Computer Science', period: '2009 – 2014', score: 'Thesis on Indic-language parsing' },
+    { id: 'edu_2', institution: 'Osmania University', degree: 'M.Tech in Computer Science', period: '2007 – 2009', score: 'First Class' },
+  ],
+  experience: [
+    { id: 'exp_1', title: 'Associate Professor', company: 'Deccan Technical University', period: '2019 – Present', type: 'Full-time', description: 'Teaches NLP and data mining, supervises four doctoral scholars and leads the industry liaison committee.' },
+    { id: 'exp_2', title: 'Assistant Professor', company: 'Deccan Technical University', period: '2014 – 2019', type: 'Full-time', description: 'Designed the undergraduate machine learning elective, now taken by over 200 students each year.' },
+  ],
+  projects: [
+    { id: 'prj_1', title: 'BhashaBench: Indic NLP Benchmark', description: 'Led an open benchmark for parsing and sentiment tasks across six Indian languages.', tags: ['NLP', 'Python', 'Research'], link: 'https://github.com/example/bhashabench' },
+  ],
+  certifications: [{ id: 'crt_1', name: 'Faculty Development: Outcome-Based Education', issuer: 'Deccan Technical University', date: 'Mar 2024', credentialUrl: '' }],
+  achievements: [{ id: 'ach_1', text: 'Best Paper Award, National Conference on Language Technologies' }],
+  resume: resume('Meera_Iyer_CV.pdf', 912340, 60),
+  createdAt: daysAgo(200),
+};
+
+const ROHAN = {
+  ...blankSections,
+  id: 'cnd_rohan',
+  userId: 'usr_rohan',
+  category: 'PROFESSIONAL',
+  fullName: 'Rohan Verma',
+  headline: 'Backend engineer with 3 years in fintech | Java, Spring Boot',
+  email: 'rohan.verma@example.com',
+  phone: '+91 99000 45678',
+  location: 'Pune, India',
+  university: 'College of Engineering, Pune',
+  degree: 'B.E. in Information Technology',
+  graduationYear: 2022,
+  cgpa: '8.1',
+  github: 'https://github.com/example/rohan-verma',
+  linkedin: 'https://www.linkedin.com/in/example-rohan-verma',
+  bio: 'Backend engineer who enjoys reliable systems and clear APIs. Exploring full-stack and machine learning roles.',
+  skills: [
+    t('Java', 'EXPERT'), t('Spring Boot', 'ADVANCED'), t('MySQL', 'ADVANCED'), t('REST APIs', 'ADVANCED'), t('Docker', 'INTERMEDIATE'),
+    t('React.js', 'INTERMEDIATE'), t('Node.js', 'BEGINNER'), t('PostgreSQL', 'ADVANCED'), t('Git', 'ADVANCED'), s('Problem Solving', 'ADVANCED'), s('Teamwork', 'ADVANCED', true),
+  ],
+  education: [{ id: 'edu_1', institution: 'College of Engineering, Pune', degree: 'B.E. in Information Technology', period: '2018 – 2022', score: 'CGPA: 8.1' }],
+  experience: [{ id: 'exp_1', title: 'Software Engineer', company: 'Paylane Systems', period: '2022 – Present', type: 'Full-time', description: 'Maintains payment reconciliation services handling over two million transactions a day.' }],
+  projects: [{ id: 'prj_1', title: 'LedgerLite', description: 'An open-source double-entry ledger service built with Spring Boot and MySQL.', tags: ['Java', 'Spring Boot', 'MySQL'], link: 'https://github.com/example/ledgerlite' }],
+  certifications: [{ id: 'crt_1', name: 'Oracle Certified Professional: Java SE', issuer: 'Oracle', date: 'Jun 2023', credentialUrl: '' }],
+  resume: resume('Rohan_Verma_Resume.pdf', 684200, 12),
+  createdAt: daysAgo(90),
+};
+
+const SNEHA = {
+  ...blankSections,
+  id: 'cnd_sneha',
+  userId: 'usr_sneha',
+  category: 'GRADUATE',
+  fullName: 'Sneha Kulkarni',
+  headline: 'Data analytics graduate | SQL, Power BI, Python',
+  email: 'sneha.kulkarni@example.com',
+  phone: '+91 97300 88120',
+  location: 'Mumbai, India',
+  university: 'University of Mumbai',
+  degree: 'B.Sc. in Statistics',
+  graduationYear: 2026,
+  cgpa: '8.6',
+  github: 'https://github.com/example/sneha-k',
+  linkedin: 'https://www.linkedin.com/in/example-sneha-kulkarni',
+  bio: 'Statistics graduate who likes turning messy data into clear decisions. Looking for an analyst role in finance or retail.',
+  skills: [
+    t('SQL', 'ADVANCED', true), t('Power BI', 'ADVANCED'), t('Excel', 'EXPERT'), t('Python', 'INTERMEDIATE'), t('Statistics', 'ADVANCED'),
+    t('Tableau', 'INTERMEDIATE'), t('Pandas', 'INTERMEDIATE'), s('Presentation Skills', 'ADVANCED'), s('Communication', 'ADVANCED'),
+  ],
+  education: [{ id: 'edu_1', institution: 'University of Mumbai', degree: 'B.Sc. in Statistics', period: '2023 – 2026', score: 'CGPA: 8.6' }],
+  experience: [{ id: 'exp_1', title: 'Business Analytics Intern', company: 'RetailKart', period: 'Jan – Apr 2026', type: 'Internship', description: 'Built weekly sales dashboards used by regional managers.' }],
+  projects: [{ id: 'prj_1', title: 'Credit Default Dashboard', description: 'Analysed 30,000 loan records and presented default drivers in Power BI.', tags: ['Power BI', 'SQL', 'Statistics'], link: '' }],
+  certifications: [{ id: 'crt_1', name: 'Microsoft Power BI Data Analyst', issuer: 'Microsoft', date: 'Nov 2025', credentialUrl: '' }],
+  resume: resume('Sneha_Kulkarni_Resume.pdf', 540120, 18),
+  createdAt: daysAgo(70),
+};
+
+// Shorter profiles that give recruiters a realistic pool to search and compare.
+const compact = (key, fullName, category, headline, location, university, degree, graduationYear, cgpa, skills, project) => ({
+  ...blankSections,
+  id: `cnd_${key}`,
+  userId: `usr_${key}`,
+  category,
+  fullName,
+  headline,
+  email: `${key}@example.com`,
+  phone: '+91 90000 12345',
+  location,
+  university,
+  degree,
+  graduationYear,
+  cgpa,
+  github: `https://github.com/example/${key}`,
+  linkedin: '',
+  bio: headline,
+  skills,
+  education: [{ id: 'edu_1', institution: university, degree, period: `${graduationYear - 4} – ${graduationYear}`, score: `CGPA: ${cgpa}` }],
+  projects: [{ id: 'prj_1', ...project, link: '' }],
+  resume: resume(`${fullName.replace(/\s+/g, '_')}_Resume.pdf`, 620000, 30),
+  createdAt: daysAgo(60),
+});
+
+export const CANDIDATES = [
+  AARAV,
+  MEERA,
+  ROHAN,
+  SNEHA,
+  compact('ananya', 'Ananya Reddy', 'STUDENT', 'Final-year AI student | NLP and computer vision projects', 'Hyderabad, India', 'Deccan Technical University', 'B.Tech in Artificial Intelligence', 2027, '9.1',
+    [t('Python', 'ADVANCED', true), t('PyTorch', 'ADVANCED'), t('NLP', 'INTERMEDIATE'), t('Computer Vision', 'ADVANCED'), t('Machine Learning', 'ADVANCED'), t('SQL', 'INTERMEDIATE'), s('Teamwork', 'ADVANCED')],
+    { title: 'Sign Language Translator', description: 'A real-time gesture recognition model running on a phone camera.', tags: ['PyTorch', 'Computer Vision'] }),
+  compact('kabir', 'Kabir Singh', 'GRADUATE', 'Full-stack developer | React and Node.js', 'Bengaluru, India', 'Narmada Valley College of Engineering', 'B.Tech in Computer Science', 2026, '7.9',
+    [t('React.js', 'ADVANCED', true), t('Node.js', 'ADVANCED'), t('PostgreSQL', 'INTERMEDIATE'), t('Docker', 'INTERMEDIATE'), t('REST APIs', 'ADVANCED'), t('Git', 'ADVANCED'), t('JavaScript', 'ADVANCED', true), s('Problem Solving', 'INTERMEDIATE')],
+    { title: 'ShiftBoard', description: 'A team scheduling app used by a local hospital.', tags: ['React', 'Node.js'] }),
+  compact('fatima', 'Fatima Sheikh', 'STUDENT', 'Product design student | Figma and user research', 'Bengaluru, India', 'National Institute of Design', 'B.Des in Interaction Design', 2027, '8.7',
+    [t('Figma', 'ADVANCED'), t('User Research', 'INTERMEDIATE'), t('Wireframing', 'ADVANCED'), t('Design Systems', 'INTERMEDIATE'), s('Communication', 'ADVANCED', true), s('Teamwork', 'ADVANCED')],
+    { title: 'CareConnect App Redesign', description: 'Redesigned a clinic booking flow and cut booking steps from nine to four.', tags: ['Figma', 'User Research'] }),
+  compact('vikram', 'Vikram Nair', 'PROFESSIONAL', 'DevOps engineer | Kubernetes, AWS, Terraform', 'Chennai, India', 'Anna University', 'B.E. in Computer Science', 2020, '8.0',
+    [t('Docker', 'EXPERT'), t('Kubernetes', 'ADVANCED'), t('AWS', 'ADVANCED'), t('Terraform', 'ADVANCED'), t('Linux', 'ADVANCED'), t('CI/CD', 'ADVANCED'), t('Python', 'INTERMEDIATE'), s('Leadership', 'INTERMEDIATE')],
+    { title: 'Zero-Downtime Migration Kit', description: 'Terraform modules used to move forty services between clusters.', tags: ['Terraform', 'Kubernetes'] }),
+  compact('priya', 'Priya Das', 'STUDENT', 'Electronics student | Embedded systems and IoT', 'Pune, India', 'Deccan Technical University', 'B.E. in Electronics', 2027, '8.3',
+    [t('Embedded C', 'ADVANCED'), t('Raspberry Pi', 'ADVANCED'), t('MQTT', 'INTERMEDIATE'), t('Sensors', 'ADVANCED'), t('C++', 'INTERMEDIATE'), s('Teamwork', 'INTERMEDIATE')],
+    { title: 'Smart Irrigation Controller', description: 'Soil-sensor controller that reduced water use in a pilot farm.', tags: ['Embedded C', 'MQTT'] }),
+  compact('arjun', 'Arjun Mehta', 'GRADUATE', 'ML graduate | Python, TensorFlow, data pipelines', 'New Delhi, India', 'Deccan Technical University', 'B.Tech in Software Engineering', 2026, '8.4',
+    [t('Python', 'ADVANCED'), t('TensorFlow', 'ADVANCED'), t('Machine Learning', 'INTERMEDIATE'), t('Statistics', 'INTERMEDIATE'), t('SQL', 'ADVANCED'), t('Docker', 'BEGINNER'), s('Communication', 'INTERMEDIATE')],
+    { title: 'Demand Forecasting Pipeline', description: 'Forecasted weekly demand for 2,000 products with gradient-boosted models.', tags: ['Python', 'TensorFlow'] }),
+  compact('nisha', 'Nisha Thomas', 'PROFESSIONAL', 'Data engineer moving into analytics leadership', 'Kochi, India', 'Cochin University of Science and Technology', 'M.Sc. in Data Science', 2021, '8.8',
+    [t('SQL', 'EXPERT'), t('Python', 'ADVANCED'), t('Tableau', 'ADVANCED'), t('Power BI', 'INTERMEDIATE'), t('Statistics', 'ADVANCED'), s('Stakeholder Management', 'ADVANCED'), s('Leadership', 'INTERMEDIATE')],
+    { title: 'Retail Insights Warehouse', description: 'Modelled a sales warehouse that serves 300 reports.', tags: ['SQL', 'Tableau'] }),
+];
+
+export const ASSESSMENT_RESULTS = [
+  { id: 'res_1', assessmentId: 'asm_python', candidateId: 'cnd_aarav', score: 80, level: 'ADVANCED', correctCount: 4, totalQuestions: 5, takenAt: daysAgo(34) },
+  { id: 'res_2', assessmentId: 'asm_communication', candidateId: 'cnd_aarav', score: 80, level: 'ADVANCED', correctCount: 4, totalQuestions: 5, takenAt: daysAgo(21) },
+  { id: 'res_3', assessmentId: 'asm_quant', candidateId: 'cnd_aarav', score: 60, level: 'INTERMEDIATE', correctCount: 3, totalQuestions: 5, takenAt: daysAgo(9) },
+  { id: 'res_4', assessmentId: 'asm_sql', candidateId: 'cnd_sneha', score: 100, level: 'EXPERT', correctCount: 5, totalQuestions: 5, takenAt: daysAgo(14) },
+  { id: 'res_5', assessmentId: 'asm_react', candidateId: 'cnd_kabir', score: 80, level: 'ADVANCED', correctCount: 4, totalQuestions: 5, takenAt: daysAgo(16) },
+];
